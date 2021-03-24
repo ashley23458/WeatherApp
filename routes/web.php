@@ -13,6 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'WeatherController@index')->name('current_weather');
+Route::get('/search', function(Illuminate\Http\Request $request) {
+      return redirect()->route('filter', ['city' => $request['city']]);    
+    })->name('search');
+Route::get('/{city}', 'WeatherController@search')->name('filter');
