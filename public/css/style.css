@@ -1,0 +1,12 @@
+.card-bg{
+    background-color: #61a1c5;
+}
+.btn-search {
+    background-color: #425563;
+    color: #fff!important;
+}
+.btn-search:hover,
+.btn-search:focus,
+.btn-search:active{
+    background-color: #384854!important;
+}
