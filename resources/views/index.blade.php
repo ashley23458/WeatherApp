@@ -55,9 +55,7 @@
                         Sunrise: {{ date('h:i A', $data['sys']['sunrise']) }}<br>
                         Sunset: {{ date('h:i A', $data['sys']['sunset']) }}<br>
                         Real feel: {{ round($data['main']['feels_like']) }}&#176; C<br>
-                        Humidity: {{ $data['main']['humidity'] }}%<br>
-
-
+                        Humidity: {{ $data['main']['humidity'] }}%
                     </p>
                 </div>
             @endif
