@@ -9,7 +9,7 @@
                     {{ csrf_field() }}
                     <div class="input-group">
                         <input class="form-control" type="text" placeholder="Search weather by City" aria-label="Search weather by city" name="city">
-                        <button name="submit" class="btn btn-search btn-lg" type="submit" ><i class="bi bi-search"></i></button>
+                        <button class="btn btn-search btn-lg"  type="submit" ><i class="bi bi-search"></i></button>
                     </div>
                 </form>
                 @if($data['cod'] == 404)
@@ -50,10 +50,12 @@
             @else
                 <div class="card-body card-bg">
                     <p class="fs-5">
-                        Wind: {{ round($data['wind']['speed']) }}mph<br>
+                        High: {{ round($data['main']['temp_max']) }}&#176; C<br>
+                        Low: {{ round($data['main']['temp_min']) }}&#176; C<br>
                         Sunrise: {{ date('h:i A', $data['sys']['sunrise']) }}<br>
                         Sunset: {{ date('h:i A', $data['sys']['sunset']) }}<br>
                         Real feel: {{ round($data['main']['feels_like']) }}&#176; C<br>
+                        Humidity: {{ $data['main']['humidity'] }}%<br>
 
 
                     </p>
